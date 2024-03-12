@@ -1,6 +1,5 @@
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        
         res = [0] * len(temperatures)
         stack = []
         
@@ -8,8 +7,6 @@ class Solution:
             while stack and t > stack[-1][1]:
                 stackInd, stackT = stack.pop()
                 res[stackInd] = i - stackInd
-            stack.append([i,t])
-            # print("stack", stack)
-            # print("res", res)
-        return res
+            stack.append([i, t])
         
+        return res
