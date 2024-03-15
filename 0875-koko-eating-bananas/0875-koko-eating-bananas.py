@@ -12,8 +12,8 @@ class Solution:
                 cur_hour += math.ceil(p/m)
             
             if cur_hour <= h:
-                res = min(res, m)
                 r = m -1
+                res = min(res, m)
                 
             else:
                 l = m +1
