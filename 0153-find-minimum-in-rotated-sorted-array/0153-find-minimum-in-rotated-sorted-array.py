@@ -13,10 +13,10 @@ class Solution:
             m = (l + r)//2
             res = min(res, nums[m])
             
-            if nums[l] <= nums[m]: #nums[l] <= nums[m]
+            if nums[l] <= nums[m]: 
                 l = m + 1
                 
-            else: # nums[l] >= nums[m]
+            else: 
                 r = m -1
         return res
                 
