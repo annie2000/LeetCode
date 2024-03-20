@@ -4,7 +4,7 @@ class Solution:
         
         for i, n in enumerate(nums):
             goal = target - n
-            if goal in mydic.keys():
+            if goal in mydic.keys() and i != mydic[goal]:
                 return [i, mydic[goal]]
             mydic[n] = i
                 
