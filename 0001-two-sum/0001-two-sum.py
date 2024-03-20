@@ -1,19 +1,12 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        mydic = {}
+        
+        for i, n in enumerate(nums):
+            goal = target - n
+            if goal in mydic.keys():
+                return [i, mydic[goal]]
+            mydic[n] = i
+                
 
-        mydic = collections.defaultdict(int)
-
-        for id, num in enumerate(nums):
-            diff = target - num #[7, 2, -2, -6]
-            if diff in mydic:
-                return [id, mydic[diff]]
-            mydic[num] = id
-            
-
-
-         
+                
