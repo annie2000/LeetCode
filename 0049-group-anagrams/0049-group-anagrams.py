@@ -2,7 +2,7 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         mydic = {}
-        res = []
+        # res = []
        
         for word in strs:
             sorW = ''.join(sorted(word))
