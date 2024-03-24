@@ -1,23 +1,32 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        l = 1
-        r = max(piles)
-        res = r 
+        # 풀어야 하는 것: 주어진 h 의 시간동안에 파일을 먹을 수 있는 가장 min(속도)
+        # max(속도) = max(piles) 의 min(속도)
         
-        while l <= r:
-            m = (l + r)//2
-            acc_hour = 0
-            
-            for p in piles:
-                acc_hour += math.ceil(p/m)
-            
-            if acc_hour <= h:
-                r = m - 1
-                res = min(res, m)
-            else:
-                l = m +1
+        ls = 1
+        rs = max(piles)
+        mins = rs
         
-        return res
+        while ls <= rs:
+            ms = (ls + rs)//2
+            totalH = 0
             
+            
+            for p in piles: 
+                totalH += math.ceil(p/ms)
+                # print("totalH: ", totalH)
+            if totalH <= h:
+                rs = ms -1
+                mins = min(mins, ms)
+                # print("mins: ", mins)
+            else: 
+                ls = ms +1
                 
+        return mins
+
+                
+                
+            
+            
+        
         
