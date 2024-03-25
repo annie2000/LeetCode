@@ -1,16 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        
         mydic = {")":"(", "}":"{", "]":"["}
         stack = []
         
-        if s[0] in mydic: # key is close parentheses
+        if s[0] in mydic:
             return False
-        
+            
         for par in s:
-            if par in mydic.values(): # open parentheses
-                stack.append(par)
-            else: 
-                if stack and stack[-1] == mydic[par]:  # stack last item의 mydic[par] 가 같다면
+            if par in mydic.values():
+                stack.append(par) # stack = ["("]
+            else: #par is one of closed parentheses
+                if stack and stack[-1] == mydic[par]: # par = "]"
                     stack.pop()
                 else:
                     stack.append(par)
@@ -18,12 +19,13 @@ class Solution:
         if len(stack) == 0:
             return True
         return False
+                
             
-            
-
-            
-            
-
-            
-        
+                
+                
+                
+                
+                
+                
+                
         
