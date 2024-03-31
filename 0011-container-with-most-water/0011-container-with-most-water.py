@@ -12,16 +12,14 @@ class Solution:
         
         maxAW = 0
         l = 0
-        r = len(height) -1
+        r = len(height)-1
         
         while l<r:
-            tempAW = min(height[l], height[r]) * (r-l)
-            maxAW = max(tempAW, maxAW)
-            if height[l] >= height[r]:
-                r -=1
-            else:
+            tempaw = min(height[l], height[r]) * (r-l)
+            maxAW = max(tempaw, maxAW)
+            
+            if height[l]< height[r]:
                 l +=1
+            else:
+                r -=1
         return maxAW
-        
-        
-        
